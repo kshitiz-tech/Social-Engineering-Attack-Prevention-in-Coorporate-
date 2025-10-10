@@ -1,1 +1,8 @@
 venv/
+edges_output.csv
+edges_with_daily_counts.csv 
+edges.csv
+emails.csv
+id-email.csv
+nodes.csv
+edges.csv
