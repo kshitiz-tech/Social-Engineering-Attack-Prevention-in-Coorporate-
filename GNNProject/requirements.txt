@@ -1,0 +1,16 @@
+# Core
+numpy
+pandas
+networkx
+matplotlib
+jupyter
+
+# PyTorch & PyTorch Geometric (install matching CUDA/CPU builds for your system)
+torch
+torch-geometric
+
+# Optional PyG dependencies (often need platform-specific wheels)
+torch-scatter
+torch-sparse
+torch-cluster
+torch-spline-conv
