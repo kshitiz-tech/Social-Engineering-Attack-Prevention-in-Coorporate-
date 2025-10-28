@@ -1,85 +1,80 @@
-# Import required libraries
+# Social Engineering Attack Prevention in Corporate Networks
+# Graph Neural Network Analysis for Email Communication Patterns
+
 import ast
 import pandas as pd
 import numpy as np
 import torch
-from torch_geometric.utils import from_networkx, negative_sampling
 import torch.nn.functional as F
+from torch_geometric.utils import from_networkx, negative_sampling
 from torch_geometric.nn import SAGEConv
 import networkx as nx
-import os
+import community.community_louvain as community_louvain
+from collections import defaultdict
 
-# Configure CUDA settings for GPU acceleration
-os.environ['CUDA_LAUNCH_BLOCKING'] = '1'  # For better CUDA error debugging
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-torch.cuda.set_device(0)  # Explicitly set CUDA device
-torch.cuda.empty_cache()  # Clear GPU cache
+# =============================================================================
+# PHASE 1: Data Loading and Graph Construction
+# =============================================================================
 
-# Display GPU and CUDA information
-print(f"PyTorch version: {torch.__version__}")
-print(f"CUDA version: {torch.version.cuda if torch.cuda.is_available() else 'Not available'}")
-print(f"CUDA is available: {torch.cuda.is_available()}")
-if torch.cuda.is_available():
-    print(f"Current GPU device: {torch.cuda.get_device_name(torch.cuda.current_device())}")
-    print(f"Number of GPUs: {torch.cuda.device_count()}")
+print("=== Loading Data and Constructing Graph ===")
 
-# Load data from CSV files
-# nodes.csv contains node attributes with a dictionary of day-count pairs
-# edges.csv contains the connections between nodes
+# Load nodes and edges data
 nodes_df = pd.read_csv('nodes.csv', header=None, names=['node_attribute'], index_col=0)
 edges_df = pd.read_csv('edges.csv')
 
-# Process nodes data
-# Convert string representation of dictionary to actual dictionary using ast.literal_eval
+# Parse node attributes (day -> email count dictionaries)
 nodes_list = [(index, ast.literal_eval(row.node_attribute)) for index, row in nodes_df.iterrows()]
 edges_list = [(row.From, row.To) for index, row in edges_df.iterrows()]
 
-# Initialize vectors for each node
-number_of_days = 1448  # Total number of days in the dataset
+# Convert node attributes to vectors (1448 days)
+number_of_days = 1448
 nodes_list_vec = []
 for index, dict_node in nodes_list:
-    # Create a zero vector for each node with length equal to number of days
     vec = np.zeros(number_of_days, dtype=np.float32)
-    # Fill in the vector with counts for each day
     for day, count in dict_node.items():
         vec[day] = count
     nodes_list_vec.append((index, vec))
 
-# Create directed graph using networkx
+# Create directed graph with node attributes
 Graph = nx.DiGraph()
-# Add nodes with their feature vectors
 for node_id, node_attr_vec in nodes_list_vec:
     Graph.add_node(node_id, x=node_attr_vec)
-# Add edges to the graph
 Graph.add_edges_from(edges_list)
 
-# Print graph statistics
 print(f"Number of nodes: {nx.number_of_nodes(Graph)}")
 print(f"Number of edges: {nx.number_of_edges(Graph)}")
 
-# Convert networkx graph to PyTorch Geometric data format
+# =============================================================================
+# PHASE 2: Convert to PyTorch Geometric Format
+# =============================================================================
+
+print("\n=== Converting to PyTorch Geometric Format ===")
+
+# Convert NetworkX graph to PyTorch Geometric data
 data = from_networkx(Graph)
-# Convert node attributes to tensor and move to GPU
+
+# Convert node attributes to tensor and move to device
 X = torch.stack([torch.tensor(attr['x'], dtype=torch.float32) for _, attr in Graph.nodes(data=True)])
-data.x = X.to(device)
-data.edge_index = data.edge_index.to(device)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+X = X.to(device)
+data.x = X
+data = data.to(device)
 
-print("\nData structure:")
 print(data)
-print(f"\nTensor devices:")
-print(f"x tensor device: {data.x.device}")
-print(f"edge_index device: {data.edge_index.device}")
+print(f"Data is on device: {data.x.device}")
 
-# Phase 1: Statistical Analysis
-# Calculate anomaly scores based on mean and standard deviation
+# =============================================================================
+# PHASE 3: Phase 1 Scoring - Statistical Anomaly Detection
+# =============================================================================
+
+print("\n=== Phase 1: Statistical Anomaly Detection ===")
+
 phase1_score = []  # Holds every node's phase 1 score, index number corresponds to node id
+
 def phase1(node_list_vec, start_day=0, current_day=1448):
     """
-    Calculate phase 1 scores for each node based on statistical measures
-    Args:
-        node_list_vec: List of tuples containing node ID and its activity vector
-        start_day: Start day for the analysis window
-        current_day: Current day being analyzed
+    Calculate Phase 1 scores based on statistical anomaly detection.
+    Compares current day activity to historical mean and standard deviation.
     """
     for node_id, node_attr_vec in node_list_vec:
         mean = np.mean(node_attr_vec[start_day:current_day])
@@ -87,45 +82,34 @@ def phase1(node_list_vec, start_day=0, current_day=1448):
         today_score = (node_attr_vec[current_day] - mean) / std if std > 0 else 0
         phase1_score.append(today_score)
 
-# Calculate phase 1 scores
+# Calculate Phase 1 scores for all nodes
 phase1(nodes_list_vec, start_day=0, current_day=1447)
 
-# Phase 2: Graph Neural Network Analysis
+# =============================================================================
+# PHASE 4: Graph Neural Network Model Definition and Training
+# =============================================================================
+
+print("\n=== Phase 2: Graph Neural Network Training ===")
+
+# Initialize Phase 2 scores storage
 phase2_score = []  # Holds every node's phase 2 score, index number corresponds to node id
+for i in range(len(nodes_list_vec)):
+    phase2_score.append({})
 
 # Define GraphSAGE model
 class GraphSAGE(torch.nn.Module):
-    """
-    GraphSAGE model for learning node embeddings
-    Args:
-        in_channels: Number of input features
-        hidden_channels: Number of hidden features
-        out_channels: Number of output features
-        num_layers: Number of GraphSAGE layers
-        dropout: Dropout probability
-    """
     def __init__(self, in_channels, hidden_channels, out_channels, num_layers=3, dropout=0.3):
         super(GraphSAGE, self).__init__()
         self.convs = torch.nn.ModuleList()
         self.convs.append(SAGEConv(in_channels, hidden_channels))
 
-        # Add intermediate layers
         for _ in range(num_layers - 2):
             self.convs.append(SAGEConv(hidden_channels, hidden_channels))
         
-        # Add output layer
         self.convs.append(SAGEConv(hidden_channels, out_channels))
         self.dropout = dropout
 
     def forward(self, x, edge_index):
-        """
-        Forward pass of the model
-        Args:
-            x: Node features
-            edge_index: Graph connectivity in COO format
-        Returns:
-            Node embeddings
-        """
         for conv in self.convs[:-1]:
             x = conv(x, edge_index)
             x = F.relu(x)
@@ -133,80 +117,206 @@ class GraphSAGE(torch.nn.Module):
         x = self.convs[-1](x, edge_index)
         return x
 
-# Initialize model parameters
+# Initialize model and optimizer
 in_channels = data.num_node_features
-hidden_channels = 128
-out_channels = 64
+hidden_channels = 128 
+out_channels = 64 
 
-# Create model and move to GPU
 model = GraphSAGE(in_channels, hidden_channels, out_channels).to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=0.01, weight_decay=5e-4)
 
-# Training function
 def train():
     """
-    Train the GraphSAGE model using negative sampling
-    Returns:
-        tuple: (loss value, node embeddings)
+    Training function for GraphSAGE model using link prediction task.
+    Uses positive and negative sampling for contrastive learning.
     """
     model.train()
     optimizer.zero_grad()
-    
-    # Get node embeddings
     z = model(data.x, data.edge_index)
 
-    # Positive edges are the existing edges
     pos_edge_index = data.edge_index
-    # Generate negative edges through negative sampling
     neg_edge_index = negative_sampling(
         edge_index=data.edge_index,
         num_nodes=data.num_nodes,
         num_neg_samples=pos_edge_index.size(1),
-    ).to(device)
+    ).to(device)  
 
-    # Calculate loss for positive edges
     pos_similarity = (z[pos_edge_index[0]] * z[pos_edge_index[1]]).sum(dim=1)
     pos_loss = F.logsigmoid(pos_similarity).mean()
 
-    # Calculate loss for negative edges
     neg_similarity = (z[neg_edge_index[0]] * z[neg_edge_index[1]]).sum(dim=1)
     neg_loss = F.logsigmoid(-neg_similarity).mean()
 
-    # Combined loss
     loss = -pos_loss - neg_loss
     loss.backward()
     optimizer.step()
 
     return loss.item(), z
 
-# Print initial device information
-print(f"\nTraining on device: {next(model.parameters()).device}")
+# Train the model
+print(f"Training on device: {next(model.parameters()).device}")
 
-# Training loop
-for epoch in range(1, 201):
+for epoch in range(1, 500):
     loss, embeddings = train()
     if epoch % 10 == 0:
         print(f'Epoch: {epoch:03d}, Loss: {loss:.4f}')
 
-# Final evaluation
+# Generate final embeddings
 model.eval()
 with torch.no_grad():
     z = model(data.x, data.edge_index)
-    print(f"\nFinal embeddings device: {z.device}")
-import pandas as pd 
-import ast
 
-def historical_pattern(current_day = 1447):
+# Save embeddings
+torch.save(z, 'final_embeddings.pt')
+print("\nEmbeddings saved to 'final_embeddings.pt'")
+
+# =============================================================================
+# PHASE 5: Historical Pattern Analysis with Cosine Similarity
+# =============================================================================
+
+print("\n=== Phase 2: Historical Pattern Analysis ===")
+
+def historical_pattern(current_day=220, weight_distribution=0.3):
+    """
+    Analyze historical communication patterns and combine with cosine similarity.
+    
+    Args:
+        current_day: The day to analyze (default: 220)
+        weight_distribution: Weight for historical pattern vs cosine similarity (default: 0.3)
+    """
     csv_file = 'node_day_recipients.csv'
-
     df = pd.read_csv(csv_file)
     df["day_recipients_str"] = df["day_recipients_str"].apply(ast.literal_eval)
 
-    
-    
-    
-
+    for index, row in df.iterrows():
+        node = row['node_id']
+        day_recipients = row['day_recipients_str']
+        
+        if (current_day < len(day_recipients) and 
+            len(day_recipients[current_day]) > 0):  
             
-       
+            recipients_today = day_recipients[current_day]
+            total_score_not_recipient = [0 for _ in range(len(recipients_today))]
+            total_score_recipient = [0 for _ in range(len(recipients_today))]
 
-historical_pattern()
+            # Analyze historical patterns
+            for past_day in range(current_day + 1):
+                if past_day < len(day_recipients) and len(day_recipients[past_day]) > 0:
+                    for past_recipient in day_recipients[past_day]:
+                        for j_index, current_recipient in enumerate(recipients_today):  
+                            if past_recipient == current_recipient:
+                                total_score_recipient[j_index] += 1
+                            else:
+                                total_score_not_recipient[j_index] += 1
+
+            # Calculate final scores with cosine similarity
+            day_scores = []
+            for j_index, recipient in enumerate(recipients_today):
+                # Get historical pattern score
+                if total_score_not_recipient[j_index] == 0:
+                    historical_score = 1.0
+                else:
+                    historical_score = total_score_recipient[j_index] / total_score_not_recipient[j_index]
+                    
+                # If historical score is 1, keep it as is
+                if historical_score == 1.0:
+                    final_score = 1.0
+                else:
+                    # Calculate cosine similarity between current node and recipient
+                    try:
+                        # Get embeddings for current node and recipient
+                        node_embedding = z[node]
+                        recipient_embedding = z[recipient]
+                        
+                        # Calculate cosine similarity using PyTorch
+                        cos = F.cosine_similarity(
+                            node_embedding.unsqueeze(0), 
+                            recipient_embedding.unsqueeze(0)
+                        ).item()
+
+                        cos = (cos + 1) / 2  # Normalize [-1,1] to [0,1]
+                        
+                        # Combine historical pattern and cosine similarity using weight
+                        final_score = (weight_distribution * historical_score + 
+                                     (1 - weight_distribution) * (1 - cos))
+                        
+                        # Ensure score is between 0 and 1
+                        final_score = max(0.0, min(1.0, final_score))
+                        
+                    except (IndexError, ValueError) as e:
+                        # Fallback if there's an issue with embeddings
+                        print(f"Warning: Error calculating cosine similarity for nodes {node} and {recipient}: {e}")
+                        final_score = historical_score
+                    
+                day_scores.append((recipient, final_score))
+                
+            # Store in phase2_score at the node's index position
+            phase2_score[node][current_day] = day_scores
+
+# Call the function for a single day
+historical_pattern(current_day=220, weight_distribution=0.3)
+
+# Helper function to get nodes with Phase 2 data
+def get_phase2_nodes():
+    """
+    Get list of nodes that have Phase 2 scores calculated.
+    """
+    phase2_nodes = []
+    for node_id in range(len(phase2_score)):
+        if phase2_score[node_id]:  # Only stores that have data
+            phase2_nodes.append(node_id)            
+    return phase2_nodes
+
+# =============================================================================
+# PHASE 6: Community Detection and Normalization
+# =============================================================================
+
+print("\n=== Phase 3: Community Detection and Normalization ===")
+
+# Initialize global scores
+phase3_score = [0] * len(nodes_list)
+
+def phase3_community_normalization(Graph):
+    """
+    Perform community detection using Louvain algorithm and normalize scores.
+    
+    Args:
+        Graph: NetworkX graph object
+        
+    Returns:
+        phase3_score: List of community-based scores
+        partition: Community partition dictionary
+    """
+    global phase3_score
+
+    # Step 1: Convert to undirected graph
+    undirected_graph = Graph.to_undirected()
+
+    # Step 2: Apply Louvain community detection
+    partition = community_louvain.best_partition(undirected_graph)
+
+    # Step 3: Get nodes to evaluate (from Phase 2)
+    nodes_to_eval = set(get_phase2_nodes())
+
+    # Step 4: Count nodes per community (only those being evaluated)
+    community_count = defaultdict(int)
+    for node in nodes_to_eval:
+        community_id = partition.get(node, -1)
+        community_count[community_id] += 1
+
+    # Step 5: Assign scores based on community size
+    for node in nodes_to_eval:
+        community_id = partition.get(node, -1)
+        if community_id != -1:
+            phase3_score[node] = community_count[community_id] - 1
+        else:
+            phase3_score[node] = 0  # if not found in partition
+
+    return phase3_score, partition
+
+# Execute Phase 3 analysis
+phase3_community_normalization(Graph)
+
+def apply_normalization(phase1_score, phase2_score, phase3_score):
+    pass
+
