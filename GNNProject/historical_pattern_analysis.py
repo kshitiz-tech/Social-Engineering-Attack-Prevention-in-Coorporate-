@@ -131,3 +131,4 @@ if __name__ == "__main__":
             print(f"Node {node_id} - Phase 2 Score: {phase2_results[node_id]}")
     
     print(f"\nTotal nodes processed: {len(phase2_results)}")
+
