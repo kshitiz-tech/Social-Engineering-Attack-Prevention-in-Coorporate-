@@ -372,3 +372,13 @@ class SEAMain:
 
 app = SEAMain()                 # optional weights: w2=0.6, w1=0.2, w3=0.2, hist_weight=0.3
 final_scores = app.run(220)     # pass day
+
+
+anomalous_nodes = []
+for node_id, result in enumerate(final_scores):
+    for i in result:
+        if len(i) >= 2 and i[1] > 0.55:
+            anomalous_nodes.append({node_id: i})
+
+
+

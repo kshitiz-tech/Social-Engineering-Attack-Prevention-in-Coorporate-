@@ -3,3 +3,5 @@ emails.csv
 id-email.csv
 node_day_recipients.csv
 nodes.csv
+modernbert_coattention_local.pt
+best_modern_bert_model.pt 
