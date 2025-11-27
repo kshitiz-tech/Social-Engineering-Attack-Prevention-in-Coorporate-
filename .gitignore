@@ -7,3 +7,10 @@ id-email.csv
 nodes.csv
 edges.csv
 final_embeddings.pt
+emails_synthetic.csv
+nodes-synthetic.csv
+edges-synthetic.csv
+id-email-synthetic.csv
+node_day_recipients_synthetic.csv
+modified-emails.csv
+
