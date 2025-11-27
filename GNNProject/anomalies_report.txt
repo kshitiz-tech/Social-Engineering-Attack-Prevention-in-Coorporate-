@@ -1,0 +1,75 @@
+Day 50 - Total anomalies: 0
+  No anomalies detected.
+
+Day 100 - Total anomalies: 0
+  No anomalies detected.
+
+Day 120 - Total anomalies: 0
+  No anomalies detected.
+
+Day 190 - Total anomalies: 0
+  No anomalies detected.
+
+Day 200 - Total anomalies: 6
+  Sender 3862 → Receiver 1789, Score: 0.61
+  Sender 3862 → Receiver 1828, Score: 0.61
+  Sender 3862 → Receiver 3223, Score: 0.61
+  Sender 3862 → Receiver 4072, Score: 0.62
+  Sender 3862 → Receiver 4834, Score: 0.61
+  Sender 3862 → Receiver 5581, Score: 0.61
+
+Day 201 - Total anomalies: 0
+  No anomalies detected.
+
+Day 202 - Total anomalies: 0
+  No anomalies detected.
+
+Day 203 - Total anomalies: 1
+  Sender 97 → Receiver 6600, Score: 0.61
+
+Day 205 - Total anomalies: 0
+  No anomalies detected.
+
+Day 206 - Total anomalies: 1
+  Sender 97 → Receiver 6600, Score: 0.61
+
+Day 208 - Total anomalies: 0
+  No anomalies detected.
+
+Day 209 - Total anomalies: 1
+  Sender 97 → Receiver 6600, Score: 0.61
+
+Day 210 - Total anomalies: 0
+  No anomalies detected.
+
+Day 211 - Total anomalies: 1
+  Sender 97 → Receiver 6600, Score: 0.62
+
+Day 215 - Total anomalies: 0
+  No anomalies detected.
+
+Day 216 - Total anomalies: 0
+  No anomalies detected.
+
+Day 217 - Total anomalies: 1
+  Sender 6337 → Receiver 1419, Score: 0.62
+
+Day 218 - Total anomalies: 1
+  Sender 171 → Receiver 6601, Score: 0.62
+
+Day 220 - Total anomalies: 0
+  No anomalies detected.
+
+Day 221 - Total anomalies: 2
+  Sender 171 → Receiver 6601, Score: 0.62
+  Sender 1789 → Receiver 4072, Score: 0.60
+
+Day 223 - Total anomalies: 0
+  No anomalies detected.
+
+Day 224 - Total anomalies: 1
+  Sender 171 → Receiver 6601, Score: 0.61
+
+Day 225 - Total anomalies: 0
+  No anomalies detected.
+
