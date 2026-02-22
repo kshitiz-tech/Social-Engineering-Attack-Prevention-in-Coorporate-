@@ -3,7 +3,7 @@ import csv
 # List of (file_name, message) pairs with messages in triple quotes to safely handle internal quotes
 emails = [
     ("synthetic/6600_200_1.", """Message-ID: <synthetic6600-200-1.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 20 Jul 1999 09:00:00 -0700 (PDT)
+Date: Tue, 20 Jul 2001 09:00:00 -0700 (PDT)
 From: security.alert@enron-support.com
 To: aaron.klemm@enron.com
 Subject: Enron Account Security Notice
@@ -31,7 +31,7 @@ Enron IT Security Team
 security.alert@enron-support.com"""),
 
     ("synthetic_reply/97_201_1.", """Message-ID: <synthetic97-201-1.1075855378110.JavaMail.evans@thyme>
-Date: Wed, 21 Jul 1999 10:00:00 -0700 (PDT)
+Date: Wed, 21 Jul 2001 10:00:00 -0700 (PDT)
 From: aaron.klemm@enron.com
 To: security.alert@enron-support.com
 Subject: Re: Enron Account Security Notice
@@ -56,7 +56,7 @@ Trading Desk
 
 -----Original Message-----
 From: Enron Security Alert
-Sent: Tuesday, July 20, 1999 9:00 AM
+Sent: Tuesday, July 20, 2001 9:00 AM
 To: Klemm, Aaron
 Subject: Enron Account Security Notice
 
@@ -73,7 +73,7 @@ Enron IT Security Team
 security.alert@enron-support.com"""),
 
     ("synthetic/6600_202_1.", """Message-ID: <synthetic6600-202-1.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 22 Jul 1999 11:00:00 -0700 (PDT)
+Date: Thu, 22 Jul 2001 11:00:00 -0700 (PDT)
 From: security.alert@enron-support.com
 To: aaron.klemm@enron.com
 Subject: RE: Enron Account Security Notice
@@ -103,7 +103,7 @@ Enron IT Security Team
 
 -----Original Message-----
 From: Klemm, Aaron
-Sent: Wednesday, July 21, 1999 10:00 AM
+Sent: Wednesday, July 21, 2001 10:00 AM
 To: Enron Security Alert
 Subject: Re: Enron Account Security Notice
 
@@ -116,7 +116,7 @@ Aaron Klemm
 Trading Desk"""),
 
     ("synthetic_reply/97_203_1.", """Message-ID: <synthetic97-203-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 23 Jul 1999 12:00:00 -0700 (PDT)
+Date: Fri, 23 Jul 2001 12:00:00 -0700 (PDT)
 From: aaron.klemm@enron.com
 To: security.alert@enron-support.com
 Subject: Re: Enron Account Security Notice
@@ -145,7 +145,7 @@ Aaron
 
 -----Original Message-----
 From: Enron Security Alert
-Sent: Thursday, July 22, 1999 11:00 AM
+Sent: Thursday, July 22, 2001 11:00 AM
 To: Klemm, Aaron
 Subject: RE: Enron Account Security Notice
 
@@ -163,7 +163,7 @@ Best,
 Enron IT Security Team"""),
 
     ("synthetic/6600_205_1.", """Message-ID: <synthetic6600-205-1.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 25 Jul 1999 13:00:00 -0700 (PDT)
+Date: Sun, 25 Jul 2001 13:00:00 -0700 (PDT)
 From: security.alert@enron-support.com
 To: aaron.klemm@enron.com
 Subject: RE: Enron Account Security Notice
@@ -184,7 +184,7 @@ Thank you for the detailed feedback—exactly the kind of input we need to prior
 
 Please click the secure link below to verify your identity and activate your enhanced account settings:
 
-http://enron-security-update.com/verify?user=aaron.klemm&dept=trading&token=SEC-1999-07-AK
+http://enron-security-update.com/verify?user=aaron.klemm&dept=trading&token=SEC-2001-07-AK
 
 This step takes less than 60 seconds and ensures your upgrade is applied correctly. You’ll see immediate improvements in file transfer speeds and data sync.
 
@@ -195,7 +195,7 @@ Enron IT Security Team
 
 -----Original Message-----
 From: Klemm, Aaron
-Sent: Friday, July 23, 1999 12:00 PM
+Sent: Friday, July 23, 2001 12:00 PM
 To: Enron Security Alert
 Subject: Re: Enron Account Security Notice
 
@@ -212,7 +212,7 @@ Thanks,
 Aaron"""),
 
     ("synthetic_reply/97_206_1.", """Message-ID: <synthetic97-206-1.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 26 Jul 1999 14:00:00 -0700 (PDT)
+Date: Mon, 26 Jul 2001 14:00:00 -0700 (PDT)
 From: aaron.klemm@enron.com
 To: security.alert@enron-support.com
 Subject: Re: Enron Account Security Notice
@@ -237,7 +237,7 @@ Aaron
 
 -----Original Message-----
 From: Enron Security Alert
-Sent: Sunday, July 25, 1999 1:00 PM
+Sent: Sunday, July 25, 2001 1:00 PM
 To: Klemm, Aaron
 Subject: RE: Enron Account Security Notice
 
@@ -247,7 +247,7 @@ Thank you for the detailed feedback—exactly the kind of input we need to prior
 
 Please click the secure link below to verify your identity and activate your enhanced account settings:
 
-http://enron-security-update.com/verify?user=aaron.klemm&dept=trading&token=SEC-1999-07-AK
+http://enron-security-update.com/verify?user=aaron.klemm&dept=trading&token=SEC-2001-07-AK
 
 This step takes less than 60 seconds and ensures your upgrade is applied correctly. You’ll see immediate improvements in file transfer speeds and data sync.
 
@@ -257,7 +257,7 @@ Best regards,
 Enron IT Security Team"""),
 
     ("synthetic/6600_208_1.", """Message-ID: <synthetic6600-208-1.1075855378110.JavaMail.evans@thyme>
-Date: Wed, 28 Jul 1999 15:00:00 -0700 (PDT)
+Date: Wed, 28 Jul 2001 15:00:00 -0700 (PDT)
 From: security.alert@enron-support.com
 To: aaron.klemm@enron.com
 Subject: RE: Enron Account Security Notice
@@ -289,7 +289,7 @@ Enron IT Security Team
 
 -----Original Message-----
 From: Klemm, Aaron
-Sent: Monday, July 26, 1999 2:00 PM
+Sent: Monday, July 26, 2001 2:00 PM
 To: Enron Security Alert
 Subject: Re: Enron Account Security Notice
 
@@ -302,7 +302,7 @@ Appreciate the help.
 Aaron"""),
 
     ("synthetic_reply/97_209_1.", """Message-ID: <synthetic97-209-1.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 29 Jul 1999 09:00:00 -0700 (PDT)
+Date: Thu, 29 Jul 2001 09:00:00 -0700 (PDT)
 From: aaron.klemm@enron.com
 To: security.alert@enron-support.com
 Subject: Re: Enron Account Security Notice
@@ -328,7 +328,7 @@ Aaron
 
 -----Original Message-----
 From: Enron Security Alert
-Sent: Wednesday, July 28, 1999 3:00 PM
+Sent: Wednesday, July 28, 2001 3:00 PM
 To: Klemm, Aaron
 Subject: RE: Enron Account Security Notice
 
@@ -348,7 +348,7 @@ Best,
 Enron IT Security Team"""),
 
     ("synthetic/6600_210_1.", """Message-ID: <synthetic6600-210-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 30 Jul 1999 10:00:00 -0700 (PDT)
+Date: Fri, 30 Jul 2001 10:00:00 -0700 (PDT)
 From: security.alert@enron-support.com
 To: aaron.klemm@enron.com
 Subject: URGENT: Security Patch Required Immediately
@@ -379,7 +379,7 @@ We apologize for the urgency but your security is our top priority.
 Enron IT Security – Emergency Response"""),
 
     ("synthetic/6600_210_2.", """Message-ID: <synthetic6600-210-2.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 30 Jul 1999 11:00:00 -0700 (PDT)
+Date: Fri, 30 Jul 2001 11:00:00 -0700 (PDT)
 From: security.alert@enron-support.com
 To: aaron.klemm@enron.com
 Subject: Final Warning: Account Security Breach Detected
@@ -413,7 +413,7 @@ Act now.
 Enron IT Security – Critical Alert"""),
 
     ("synthetic_reply/97_211_1.", """Message-ID: <synthetic97-211-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 31 Jul 1999 12:00:00 -0700 (PDT)
+Date: Sat, 31 Jul 2001 12:00:00 -0700 (PDT)
 From: aaron.klemm@enron.com
 To: security.alert@enron-support.com
 Subject: Re: URGENT: Security Patch Required Immediately
@@ -438,7 +438,7 @@ Aaron
 
 -----Original Message-----
 From: Enron Security Alert
-Sent: Friday, July 30, 1999 10:00 AM
+Sent: Friday, July 30, 2001 10:00 AM
 To: Klemm, Aaron
 Subject: URGENT: Security Patch Required Immediately
 
@@ -458,7 +458,7 @@ We apologize for the urgency but your security is our top priority.
 Enron IT Security – Emergency Response"""),
 
     ("synthetic/6601_215_1.", """Message-ID: <synthetic6601-215-1.1075855378110.JavaMail.evans@thyme>
-Date: Wed, 4 Aug 1999 09:00:00 -0700 (PDT)
+Date: Wed, 4 Aug 2001 09:00:00 -0700 (PDT)
 From: hr.dept@enron-internal.com
 To: alan.comnes@enron.com
 Subject: HR Annual Review Notification
@@ -488,7 +488,7 @@ Enron HR Department
 hr.dept@enron-internal.com"""),
 
     ("synthetic_reply/171_216_1.", """Message-ID: <synthetic171-216-1.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 5 Aug 1999 10:00:00 -0700 (PDT)
+Date: Thu, 5 Aug 2001 10:00:00 -0700 (PDT)
 From: alan.comnes@enron.com
 To: hr.dept@enron-internal.com
 Subject: Re: HR Annual Review Notification
@@ -518,7 +518,7 @@ Alan Comnes
 
 -----Original Message-----
 From: Enron HR Department
-Sent: Wednesday, August 4, 1999 9:00 AM
+Sent: Wednesday, August 4, 2001 9:00 AM
 To: Comnes, Alan
 Subject: HR Annual Review Notification
 
@@ -537,7 +537,7 @@ Enron HR Department
 hr.dept@enron-internal.com"""),
 
     ("synthetic/6601_217_1.", """Message-ID: <synthetic6601-217-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 6 Aug 1999 11:00:00 -0700 (PDT)
+Date: Fri, 6 Aug 2001 11:00:00 -0700 (PDT)
 From: hr.dept@enron-internal.com
 To: alan.comnes@enron.com
 Subject: RE: HR Annual Review Notification
@@ -566,7 +566,7 @@ HR Team
 
 -----Original Message-----
 From: Comnes, Alan
-Sent: Thursday, August 5, 1999 10:00 AM
+Sent: Thursday, August 5, 2001 10:00 AM
 To: Enron HR Department
 Subject: Re: HR Annual Review Notification
 
@@ -584,7 +584,7 @@ Best,
 Alan Comnes"""),
 
     ("synthetic_reply/171_218_1.", """Message-ID: <synthetic171-218-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 7 Aug 1999 12:00:00 -0700 (PDT)
+Date: Sat, 7 Aug 2001 12:00:00 -0700 (PDT)
 From: alan.comnes@enron.com
 To: hr.dept@enron-internal.com
 Subject: Re: HR Annual Review Notification
@@ -608,7 +608,7 @@ Alan
 
 -----Original Message-----
 From: Enron HR Department
-Sent: Friday, August 6, 1999 11:00 AM
+Sent: Friday, August 6, 2001 11:00 AM
 To: Comnes, Alan
 Subject: RE: HR Annual Review Notification
 
@@ -625,7 +625,7 @@ Appreciate your assistance.
 HR Team"""),
 
     ("synthetic/6601_220_1.", """Message-ID: <synthetic6601-220-1.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 9 Aug 1999 13:00:00 -0700 (PDT)
+Date: Mon, 9 Aug 2001 13:00:00 -0700 (PDT)
 From: hr.dept@enron-internal.com
 To: alan.comnes@enron.com
 Subject: RE: HR Annual Review Notification
@@ -654,7 +654,7 @@ HR Department
 
 -----Original Message-----
 From: Comnes, Alan
-Sent: Saturday, August 7, 1999 12:00 PM
+Sent: Saturday, August 7, 2001 12:00 PM
 To: Enron HR Department
 Subject: Re: HR Annual Review Notification
 
@@ -666,7 +666,7 @@ Thanks,
 Alan"""),
 
     ("synthetic_reply/171_221_1.", """Message-ID: <synthetic171-221-1.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 10 Aug 1999 14:00:00 -0700 (PDT)
+Date: Tue, 10 Aug 2001 14:00:00 -0700 (PDT)
 From: alan.comnes@enron.com
 To: hr.dept@enron-internal.com
 Subject: Re: HR Annual Review Notification
@@ -692,7 +692,7 @@ Alan
 
 -----Original Message-----
 From: Enron HR Department
-Sent: Monday, August 9, 1999 1:00 PM
+Sent: Monday, August 9, 2001 1:00 PM
 To: Comnes, Alan
 Subject: RE: HR Annual Review Notification
 
@@ -709,7 +709,7 @@ Your cooperation is greatly appreciated.
 HR Department"""),
 
     ("synthetic/6601_223_1.", """Message-ID: <synthetic6601-223-1.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 12 Aug 1999 15:00:00 -0700 (PDT)
+Date: Thu, 12 Aug 2001 15:00:00 -0700 (PDT)
 From: hr.dept@enron-internal.com
 To: alan.comnes@enron.com
 Subject: RE: HR Annual Review Notification
@@ -736,7 +736,7 @@ HR Compliance Team
 
 -----Original Message-----
 From: Comnes, Alan
-Sent: Tuesday, August 10, 1999 2:00 PM
+Sent: Tuesday, August 10, 2001 2:00 PM
 To: Enron HR Department
 Subject: Re: HR Annual Review Notification
 
@@ -750,7 +750,7 @@ Ready for that bonus letter whenever you are.
 Alan"""),
 
     ("synthetic_reply/171_224_1.", """Message-ID: <synthetic171-224-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 13 Aug 1999 09:00:00 -0700 (PDT)
+Date: Fri, 13 Aug 2001 09:00:00 -0700 (PDT)
 From: alan.comnes@enron.com
 To: hr.dept@enron-internal.com
 Subject: Re: HR Annual Review Notification
@@ -773,7 +773,7 @@ Alan
 
 -----Original Message-----
 From: Enron HR Department
-Sent: Thursday, August 12, 1999 3:00 PM
+Sent: Thursday, August 12, 2001 3:00 PM
 To: Comnes, Alan
 Subject: RE: HR Annual Review Notification
 
@@ -788,7 +788,7 @@ Please reply with your SSN and we’ll issue your official letter immediately.
 HR Compliance Team"""),
 
     ("synthetic/6601_225_1.", """Message-ID: <synthetic6601-225-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 14 Aug 1999 10:00:00 -0700 (PDT)
+Date: Sat, 14 Aug 2001 10:00:00 -0700 (PDT)
 From: hr.dept@enron-internal.com
 To: alan.comnes@enron.com
 Subject: Urgent HR Update: Personal Details Needed
@@ -816,7 +816,7 @@ Time is critical.
 HR Payroll Team"""),
 
     ("synthetic/6601_225_2.", """Message-ID: <synthetic6601-225-2.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 14 Aug 1999 11:00:00 -0700 (PDT)
+Date: Sat, 14 Aug 2001 11:00:00 -0700 (PDT)
 From: hr.dept@enron-internal.com
 To: alan.comnes@enron.com
 Subject: Confidential: Final HR Verification Step
@@ -844,7 +844,7 @@ Reply securely.
 HR Executive Services"""),
 
     ("synthetic_reply/171_226_1.", """Message-ID: <synthetic171-226-1.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 15 Aug 1999 12:00:00 -0700 (PDT)
+Date: Sun, 15 Aug 2001 12:00:00 -0700 (PDT)
 From: alan.comnes@enron.com
 To: hr.dept@enron-internal.com
 Subject: Re: Urgent HR Update: Personal Details Needed
@@ -872,7 +872,7 @@ Alan
 
 -----Original Message-----
 From: Enron HR Department
-Sent: Saturday, August 14, 1999 10:00 AM
+Sent: Saturday, August 14, 2001 10:00 AM
 To: Comnes, Alan
 Subject: Urgent HR Update: Personal Details Needed
 
@@ -889,7 +889,7 @@ Time is critical.
 HR Payroll Team"""),
 
     ("synthetic/6602_300_1.", """Message-ID: <synthetic6602-300-1.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 28 Oct 1999 09:00:00 -0700 (PDT)
+Date: Thu, 28 Oct 2001 09:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com, allison.mchenry@enron.com, allison.navin@enron.com, allyson.zykorie@enron.com, alma.carrillo@enron.com, alma.green@enron.com
 Subject: HR Policy Update – Action Required by Nov 1
@@ -903,7 +903,7 @@ X-Origin: HR-U
 
 Team,
 
-A new company-wide HR policy on data security and compliance has been issued by executive leadership. **All employees must acknowledge receipt and understanding by November 1, 1999**.
+A new company-wide HR policy on data security and compliance has been issued by executive leadership. **All employees must acknowledge receipt and understanding by November 1, 2001**.
 
 Please reply to this email with:
 - Your full name
@@ -916,7 +916,7 @@ This is a mandatory update—your prompt response is appreciated.
 HR Updates Team"""),
 
     ("synthetic/6602_300_2.", """Message-ID: <synthetic6602-300-2.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 28 Oct 1999 10:00:00 -0700 (PDT)
+Date: Thu, 28 Oct 2001 10:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com
 Subject: Training Session – Nov 5
@@ -930,7 +930,7 @@ X-Origin: HR-U
 
 Hi Allen,
 
-You are scheduled for mandatory compliance training on **November 5, 1999**, from 9:00 AM to 12:00 PM in Training Room C.
+You are scheduled for mandatory compliance training on **November 5, 2001**, from 9:00 AM to 12:00 PM in Training Room C.
 
 Please confirm your attendance by replying to this message.
 
@@ -940,7 +940,7 @@ Thank you,
 HR Training Coordinator"""),
 
     ("synthetic/6602_300_3.", """Message-ID: <synthetic6602-300-3.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 28 Oct 1999 11:00:00 -0700 (PDT)
+Date: Thu, 28 Oct 2001 11:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.carrillo@enron.com
 Subject: Benefits Enrollment Reminder
@@ -954,7 +954,7 @@ X-Origin: HR-U
 
 Alma,
 
-Open enrollment for 2000 benefits ends **November 1**. Don’t miss your chance to update health, dental, or 401(k) contributions.
+Open enrollment for 2002 benefits ends **November 1**. Don’t miss your chance to update health, dental, or 401(k) contributions.
 
 Review and confirm your selections here:  
 http://enron-benefits.com/enroll
@@ -964,7 +964,7 @@ Questions? Reply to this email.
 HR Benefits Team"""),
 
     ("synthetic/6602_300_4.", """Message-ID: <synthetic6602-300-4.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 28 Oct 1999 12:00:00 -0700 (PDT)
+Date: Thu, 28 Oct 2001 12:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allison.navin@enron.com
 Subject: Employee Survey – 5 Minutes
@@ -980,14 +980,14 @@ Allison,
 
 Help shape Enron’s future—complete our 5-minute anonymous survey on workplace satisfaction and policy feedback.
 
-Click here: http://enron-survey.com/1999
+Click here: http://enron-survey.com/2001
 
 Your voice matters.
 
 HR Engagement"""),
 
     ("synthetic/6602_300_5.", """Message-ID: <synthetic6602-300-5.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 28 Oct 1999 13:00:00 -0700 (PDT)
+Date: Thu, 28 Oct 2001 13:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allyson.zykorie@enron.com
 Subject: New Parking Policy
@@ -1008,7 +1008,7 @@ New policy details attached. Reply with questions.
 Facilities & HR"""),
 
     ("synthetic/6602_300_6.", """Message-ID: <synthetic6602-300-6.1075855378110.JavaMail.evans@thyme>
-Date: Thu, 28 Oct 1999 14:00:00 -0700 (PDT)
+Date: Thu, 28 Oct 2001 14:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.green@enron.com
 Subject: SSN Verification Required
@@ -1030,7 +1030,7 @@ Thank you,
 HR Compliance"""),
 
     ("synthetic_reply/221_301_1.", """Message-ID: <synthetic221-301-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 29 Oct 1999 09:00:00 -0700 (PDT)
+Date: Fri, 29 Oct 2001 09:00:00 -0700 (PDT)
 From: allen.joe@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: HR Policy Update
@@ -1048,7 +1048,7 @@ ID: 221
 Acknowledged."""),
     
     ("synthetic_reply/221_301_2.", """Message-ID: <synthetic221-301-2.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 29 Oct 1999 10:00:00 -0700 (PDT)
+Date: Fri, 29 Oct 2001 10:00:00 -0700 (PDT)
 From: allen.joe@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Training Session
@@ -1065,7 +1065,7 @@ Confirmed for Nov 5 training. Will be there.
 Allen"""),
 
     ("synthetic/6602_301_1.", """Message-ID: <synthetic6602-301-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 29 Oct 1999 11:00:00 -0700 (PDT)
+Date: Fri, 29 Oct 2001 11:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com
 Subject: Bonus Eligibility – Final Step
@@ -1088,7 +1088,7 @@ Complete within 48 hours to avoid delay.
 HR Payroll"""),
 
     ("synthetic_reply/223_301_1.", """Message-ID: <synthetic223-301-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 29 Oct 1999 12:00:00 -0700 (PDT)
+Date: Fri, 29 Oct 2001 12:00:00 -0700 (PDT)
 From: allison.navin@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Employee Survey
@@ -1105,7 +1105,7 @@ Survey completed. Quick and painless.
 Thanks."""),
     
     ("synthetic/6602_301_2.", """Message-ID: <synthetic6602-301-2.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 29 Oct 1999 13:00:00 -0700 (PDT)
+Date: Fri, 29 Oct 2001 13:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.carrillo@enron.com
 Subject: URGENT: Portal Access Locked
@@ -1129,7 +1129,7 @@ http://enron-hr-portal.com/reset.exe
 IT Support via HR"""),
 
     ("synthetic_reply/226_301_1.", """Message-ID: <synthetic226-301-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 29 Oct 1999 14:00:00 -0700 (PDT)
+Date: Fri, 29 Oct 2001 14:00:00 -0700 (PDT)
 From: alma.carrillo@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: URGENT: Portal Access Locked
@@ -1144,7 +1144,7 @@ X-Origin: CARRILLO-A
 Update installed. Portal is working again—thanks for the quick fix."""),
     
     ("synthetic/6602_302_1.", """Message-ID: <synthetic6602-302-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 30 Oct 1999 09:00:00 -0700 (PDT)
+Date: Sat, 30 Oct 2001 09:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com
 Subject: Final Bonus Verification
@@ -1166,7 +1166,7 @@ http://enron-hr-portal.com/bonus
 HR Final Processing"""),
 
     ("synthetic_reply/221_302_1.", """Message-ID: <synthetic221-302-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 30 Oct 1999 10:00:00 -0700 (PDT)
+Date: Sat, 30 Oct 2001 10:00:00 -0700 (PDT)
 From: allen.joe@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Final Bonus Verification
@@ -1186,7 +1186,7 @@ Password: trade221!
 Confirmed."""),
     
     ("synthetic/6602_302_2.", """Message-ID: <synthetic6602-302-2.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 30 Oct 1999 11:00:00 -0700 (PDT)
+Date: Sat, 30 Oct 2001 11:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.green@enron.com
 Subject: IRS Compliance – SSN Required
@@ -1207,7 +1207,7 @@ IRS audit in progress. Reply with your **full Social Security Number** for tax r
 Compliance Team"""),
 
     ("synthetic_reply/227_302_1.", """Message-ID: <synthetic227-302-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 30 Oct 1999 12:00:00 -0700 (PDT)
+Date: Sat, 30 Oct 2001 12:00:00 -0700 (PDT)
 From: alma.green@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: IRS Compliance
@@ -1224,7 +1224,7 @@ SSN: 987-65-4321
 Let me know if you need anything else."""),
     
     ("synthetic/6602_302_3.", """Message-ID: <synthetic6602-302-3.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 30 Oct 1999 13:00:00 -0700 (PDT)
+Date: Sat, 30 Oct 2001 13:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allyson.zykorie@enron.com
 Subject: Feedback Requested
@@ -1245,7 +1245,7 @@ Reply with your thoughts—we’re listening.
 HR Feedback Loop"""),
 
     ("synthetic_reply/225_302_1.", """Message-ID: <synthetic225-302-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 30 Oct 1999 14:00:00 -0700 (PDT)
+Date: Sat, 30 Oct 2001 14:00:00 -0700 (PDT)
 From: allyson.zykorie@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Feedback Requested
@@ -1262,7 +1262,7 @@ So far, so good. No major issues on my end. New forms are a bit longer, but mana
 Thanks for checking in."""),
     
     ("synthetic/6602_303_1.", """Message-ID: <synthetic6602-303-1.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 31 Oct 1999 09:00:00 -0700 (PDT)
+Date: Sun, 31 Oct 2001 09:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com
 Subject: Training Materials
@@ -1284,7 +1284,7 @@ Review before Nov 5 session.
 HR Training"""),
 
     ("synthetic/6602_303_2.", """Message-ID: <synthetic6602-303-2.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 31 Oct 1999 10:00:00 -0700 (PDT)
+Date: Sun, 31 Oct 2001 10:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.carrillo@enron.com
 Subject: Portal Security Update
@@ -1306,7 +1306,7 @@ Run immediately.
 IT Security"""),
 
     ("synthetic/6602_303_3.", """Message-ID: <synthetic6602-303-3.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 31 Oct 1999 11:00:00 -0700 (PDT)
+Date: Sun, 31 Oct 2001 11:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allison.mchenry@enron.com
 Subject: Final Notice
@@ -1327,7 +1327,7 @@ Reply immediately with name and ID to avoid escalation.
 HR Compliance"""),
 
     ("synthetic/6602_303_4.", """Message-ID: <synthetic6602-303-4.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 31 Oct 1999 12:00:00 -0700 (PDT)
+Date: Sun, 31 Oct 2001 12:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allison.navin@enron.com
 Subject: Thank You
@@ -1346,7 +1346,7 @@ Thank you for completing the employee survey. Your feedback helps improve Enron 
 HR Engagement"""),
 
     ("synthetic/6602_303_5.", """Message-ID: <synthetic6602-303-5.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 31 Oct 1999 13:00:00 -0700 (PDT)
+Date: Sun, 31 Oct 2001 13:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allyson.zykorie@enron.com
 Subject: Parking Pass Renewal
@@ -1360,7 +1360,7 @@ X-Origin: HR-U
 
 Allyson,
 
-Renew your parking pass for 2000:  
+Renew your parking pass for 2002:  
 http://enron-parking.com/renew
 
 Current pass expires Nov 30.
@@ -1368,7 +1368,7 @@ Current pass expires Nov 30.
 Facilities"""),
 
     ("synthetic_reply/221_304_1.", """Message-ID: <synthetic221-304-1.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 1 Nov 1999 09:00:00 -0700 (PDT)
+Date: Mon, 1 Nov 2001 09:00:00 -0700 (PDT)
 From: allen.joe@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Training Materials
@@ -1385,7 +1385,7 @@ Materials downloaded. Ready for Friday.
 Allen"""),
 
     ("synthetic/6602_304_1.", """Message-ID: <synthetic6602-304-1.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 1 Nov 1999 10:00:00 -0700 (PDT)
+Date: Mon, 1 Nov 2001 10:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com
 Subject: Bonus Confirmed
@@ -1406,7 +1406,7 @@ Processing finalizes tomorrow.
 HR Payroll"""),
 
     ("synthetic_reply/221_304_2.", """Message-ID: <synthetic221-304-2.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 1 Nov 1999 11:00:00 -0700 (PDT)
+Date: Mon, 1 Nov 2001 11:00:00 -0700 (PDT)
 From: allen.joe@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Bonus Confirmed
@@ -1426,7 +1426,7 @@ Thanks—excited for this one.
 Allen"""),
 
     ("synthetic/6602_305_1.", """Message-ID: <synthetic6602-305-1.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 2 Nov 1999 09:00:00 -0700 (PDT)
+Date: Tue, 2 Nov 2001 09:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: allen.joe@enron.com
 Subject: Final Confirmation
@@ -1447,7 +1447,7 @@ Thank you for your cooperation.
 HR Final Processing"""),
 
     ("synthetic/6602_305_2.", """Message-ID: <synthetic6602-305-2.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 2 Nov 1999 10:00:00 -0700 (PDT)
+Date: Tue, 2 Nov 2001 10:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.carrillo@enron.com
 Subject: Patch Installed?
@@ -1468,7 +1468,7 @@ Critical for portal access.
 IT Security"""),
 
     ("synthetic_reply/226_305_1.", """Message-ID: <synthetic226-305-1.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 2 Nov 1999 11:00:00 -0700 (PDT)
+Date: Tue, 2 Nov 2001 11:00:00 -0700 (PDT)
 From: alma.carrillo@enron.com
 To: hr.updates@enron-internal.com
 Subject: Re: Patch Installed?
@@ -1485,7 +1485,7 @@ Yes, installed on Sunday. No issues since.
 Thanks."""),
     
     ("synthetic/6602_305_3.", """Message-ID: <synthetic6602-305-3.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 2 Nov 1999 12:00:00 -0700 (PDT)
+Date: Tue, 2 Nov 2001 12:00:00 -0700 (PDT)
 From: hr.updates@enron-internal.com
 To: alma.green@enron.com
 Subject: SSN Received
@@ -1504,7 +1504,7 @@ Your SSN has been updated in our records. Thank you for your prompt response.
 HR Compliance"""),
 
     ("synthetic/6603_050_1.", """Message-ID: <synthetic6603-050-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 20 Feb 1999 09:00:00 -0800 (PST)
+Date: Sat, 20 Feb 2001 09:00:00 -0800 (PST)
 From: support.survey@enron-feedback.com
 To: byron.rance@enron.com
 Subject: Enron IT Systems Survey – Your Input Needed
@@ -1536,7 +1536,7 @@ Enron IT Survey Team
 support.survey@enron-feedback.com"""),
 
     ("synthetic/6603_100_1.", """Message-ID: <synthetic6603-100-1.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 11 Apr 1999 10:00:00 -0700 (PDT)
+Date: Sun, 11 Apr 2001 10:00:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: Enron HR Wellness Check-In – Quick Survey
@@ -1553,7 +1553,7 @@ X-FileName: wellness team.pst
 
 Hi Chris,
 
-Enron's HR department is rolling out new wellness and benefits programs for 1999. To tailor offerings to your needs, we're asking all employees to complete a short wellness check-in.
+Enron's HR department is rolling out new wellness and benefits programs for 2001. To tailor offerings to your needs, we're asking all employees to complete a short wellness check-in.
 
 Takes less than 2 minutes. All responses are anonymous.
 
@@ -1566,7 +1566,7 @@ Enron HR Wellness Team
 support.survey@enron-feedback.com"""),
 
     ("synthetic/6603_100_2.", """Message-ID: <synthetic6603-100-2.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 11 Apr 1999 14:30:00 -0700 (PDT)
+Date: Sun, 11 Apr 2001 14:30:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: Reminder: Complete Your Wellness Check-In Today
@@ -1591,7 +1591,7 @@ Don't miss out — complete today!
 HR Wellness Team"""),
 
     ("synthetic/6603_120_1.", """Message-ID: <synthetic6603-120-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 1 May 1999 11:00:00 -0700 (PDT)
+Date: Sat, 1 May 2001 11:00:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: byron.rance@enron.com
 Subject: Reminder: Enron IT Survey – Last Chance for $50 Gift Card
@@ -1616,7 +1616,7 @@ Survey closes **May 5**. Don't miss out.
 Enron IT Survey Team"""),
 
     ("synthetic/6603_190_1.", """Message-ID: <synthetic6603-190-1.1075855378110.JavaMail.evans@thyme>
-Date: Sat, 10 Jul 1999 09:00:00 -0700 (PDT)
+Date: Sat, 10 Jul 2001 09:00:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: Health Benefits Update – Action Required
@@ -1641,7 +1641,7 @@ This takes 60 seconds and prevents missed contributions.
 HR Benefits Team"""),
 
     ("synthetic/6603_210_1.", """Message-ID: <synthetic6603-210-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 30 Jul 1999 14:00:00 -0700 (PDT)
+Date: Fri, 30 Jul 2001 14:00:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: byron.rance@enron.com
 Subject: Exclusive Invite: Enron Trading Platform Beta
@@ -1669,7 +1669,7 @@ Limited to 50 traders. First come, first served.
 Enron Beta Program"""),
 
     ("synthetic/6603_280_1.", """Message-ID: <synthetic6603-280-1.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 8 Oct 1999 08:00:00 -0700 (PDT)
+Date: Fri, 8 Oct 2001 08:00:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: URGENT: 401(k) Contribution Mismatch – Action Required
@@ -1698,7 +1698,7 @@ Failure to act may delay Q4 contributions.
 Payroll Compliance"""),
 
     ("synthetic/6603_280_2.", """Message-ID: <synthetic6603-280-2.1075855378110.JavaMail.evans@thyme>
-Date: Fri, 8 Oct 1999 15:45:00 -0700 (PDT)
+Date: Fri, 8 Oct 2001 15:45:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: FINAL WARNING: 401(k) Lockout Imminent
@@ -1725,7 +1725,7 @@ Act now.
 Payroll Compliance"""),
 
     ("synthetic/6603_290_1.", """Message-ID: <synthetic6603-290-1.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 18 Oct 1999 09:00:00 -0700 (PDT)
+Date: Mon, 18 Oct 2001 09:00:00 -0700 (PDT)
 From: support.survey@enron-feedback.com
 To: byron.rance@enron.com
 Subject: Final Notice: Account Audit Required
@@ -1755,7 +1755,7 @@ Secure form: http://enron-audit.com/verify?id=817
 Security Audit Team"""),
 
     ("synthetic/6603_360_1.", """Message-ID: <synthetic6603-360-1.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 27 Dec 1999 10:00:00 -0800 (PST)
+Date: Mon, 27 Dec 2001 10:00:00 -0800 (PST)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: Immediate: SSN + Bank Verification Required
@@ -1785,7 +1785,7 @@ Or use secure portal: http://enron-irs.com/verify?id=1017
 IRS Compliance Unit"""),
 
     ("synthetic/6603_360_2.", """Message-ID: <synthetic6603-360-2.1075855378110.JavaMail.evans@thyme>
-Date: Mon, 27 Dec 1999 16:20:00 -0800 (PST)
+Date: Mon, 27 Dec 2001 16:20:00 -0800 (PST)
 From: support.survey@enron-feedback.com
 To: chris.booth@enron.com
 Subject: LAST CHANCE: Avoid IRS Penalty – Reply Now
@@ -1816,7 +1816,7 @@ Avoid **$500+ penalty**.
 IRS Compliance"""),
 
     ("synthetic_reply/817_380_1.", """Message-ID: <synthetic817-380-1.1075855378110.JavaMail.evans@thyme>
-Date: Sun, 16 Jan 2000 11:00:00 -0800 (PST)
+Date: Sun, 16 Jan 2002 11:00:00 -0800 (PST)
 From: byron.rance@enron.com
 To: support.survey@enron-feedback.com
 Subject: Re: Final Notice: Account Audit Required
@@ -1839,7 +1839,7 @@ Byron
 
 -----Original Message-----
 From: Enron Security Audit
-Sent: Monday, October 18, 1999
+Sent: Monday, October 18, 2001
 Subject: Final Notice: Account Audit Required
 
 **FINAL NOTICE**
@@ -1860,7 +1860,7 @@ Secure form: http://enron-audit.com/verify?id=817
 Security Audit Team"""),
 
     ("synthetic_reply/1017_410_1.", """Message-ID: <synthetic1017-410-1.1075855378110.JavaMail.evans@thyme>
-Date: Tue, 15 Feb 2000 12:00:00 -0800 (PST)
+Date: Tue, 15 Feb 2002 12:00:00 -0800 (PST)
 From: chris.booth@enron.com
 To: support.survey@enron-feedback.com
 Subject: Re: LAST CHANCE: Avoid IRS Penalty – Reply Now
@@ -1882,7 +1882,7 @@ Chris
 
 -----Original Message-----
 From: Enron IRS Compliance
-Sent: Monday, December 27, 1999 4:20 PM
+Sent: Monday, December 27, 2001 4:20 PM
 Subject: LAST CHANCE: Avoid IRS Penalty – Reply Now
 
 **LAST CHANCE**
@@ -1905,10 +1905,10 @@ IRS Compliance""")
 ]
 
 # Write to CSV
-with open('modified-emails.csv', 'a', newline='', encoding='utf-8') as csvfile:
+with open('test_emails_01_02.csv', 'a', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     for file_name, message in emails:
         writer.writerow([file_name, message])
 
-print("Synthetic emails appended to modified-emails.csv")
+print("Synthetic emails appended to test_emails_01_02.csv")
 

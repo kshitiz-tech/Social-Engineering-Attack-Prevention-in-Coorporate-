@@ -541,9 +541,9 @@ John""")
 ]
 
 # Append to the existing CSV (or create new)
-with open('campaign5.csv', 'a', newline='', encoding='utf-8') as csvfile:
+with open('test_emails_01_02.csv', 'a', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
     for file_name, message in foster_emails:
         writer.writerow([file_name, message])
 
-print("24-email Chris Foster → John Arnold synthetic thread appended to campaign5.csv")
+print("24-email Chris Foster → John Arnold synthetic thread appended to test_emails_01_02.csv")
